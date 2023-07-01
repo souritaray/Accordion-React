@@ -1,17 +1,22 @@
+import questions from './data.js';
+import Question from './Questions.jsx';
 
-import './App.css';
 
 function App() {
   return (
    <>
    <main>
-    <div className="container">
+    <section className="container">
     <h3>Questions And Answers About Login</h3>
-    <section className="info">
+    
+     {questions.map(element => {
+      return(
+        <Question key={element.id} element={element}/>
+      )
       
-
+     })}
     </section>
-    </div>
+    
    </main>
    </>
   );
