@@ -1,4 +1,6 @@
+import { useState } from "react";
 function Question({element}){
+    const [toggle, setToggle] = useState(false);
     const { title, info} = element;
     return(
         
@@ -6,9 +8,11 @@ function Question({element}){
         <div className="question">
             <header>
                 <h4>{title}</h4>
-                <button className="btn"></button>
+                <button className="btn" onClick={() => {setToggle(!toggle)}}>
+                    {toggle ? "-" : "+"}
+                </button>
             </header>
-            <p>{info}</p>
+            <p>{toggle ? info : null}</p>
         </div>
         </>
     )
